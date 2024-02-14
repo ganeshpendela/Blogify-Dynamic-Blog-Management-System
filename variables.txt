@@ -1,0 +1,4 @@
+app.js = require('dotenv').config() is a line of code commonly used in Node.js applications to load environment
+         variables from a .env file into the process environment.
+
+npm run dev = to run the project automatically after every save.
