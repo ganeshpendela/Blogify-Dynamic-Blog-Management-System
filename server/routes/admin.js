@@ -61,6 +61,7 @@ router.post('/admin', async (req, res) => {
 
     if(!user) {
       return res.status(401).json( { message: 'Invalid credentials' } );
+      
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
@@ -267,6 +268,9 @@ router.get('/logout', (req, res) => {
   //res.json({ message: 'Logout successful.'});
   res.redirect('/');
 });
+
+
+
 
 
 module.exports = router;
