@@ -2,6 +2,11 @@
 
 Welcome to Blogify! This dynamic blog management system allows you to create, manage, and publish blog posts efficiently. Built with HTML, CSS, JS, Node.js, EJS, and MongoDB, Blogify offers a robust platform for personal and professional blogging.
 
+
+## Live Preview
+[Click here](https://blogify-dynamic-blog-management-system.onrender.com) for a live preview of Blogify.
+
+
 ## Features
 - **Create, Edit, and Delete Posts:** Manage your blog content with ease.
 - **Persistent Storage:** Utilizes MongoDB for data storage.
@@ -20,4 +25,4 @@ Welcome to Blogify! This dynamic blog management system allows you to create, ma
     node app.js
 
 ## Usage
-After starting the server, visit http://localhost:3000 in your web browser to begin using Blogify to manage your blog posts.
+
