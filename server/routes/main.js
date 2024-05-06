@@ -128,6 +128,28 @@ router.get('/about', (req, res) => {
   });
 });
 
+/**
+ * GET /
+ * Contact
+*/
+router.get('/contact', (req, res) => {
+  res.render('contact', {
+    currentRoute: 'contact'
+  });
+});
+
+/**
+ * GET /
+ * login
+*/
+
+router.get('/login', (req, res) => {
+  res.redirect('/admin');
+});
+
+
+
+
 
 // function insertPostData () {
 //   Post.insertMany([

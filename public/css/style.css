@@ -338,3 +338,13 @@ textarea {
     justify-content: space-between;
     padding: 10px 0;
   }
+
+  .about{
+    line-height: 2rem;
+    font-family: inherit;
+    text-align: justify;
+  }
+
+  .contact-info{
+    
+  }
