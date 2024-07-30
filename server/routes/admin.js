@@ -61,18 +61,18 @@ router.post('/admin', async (req, res) => {
 
     if(!user) {
       // return res.status(401).json( { message: 'Invalid credentials' } );
-      res.render('error', {
+      res.status(401).render('error', {
         layout: adminLayout,
         message: "Invalid Credentials"
       });
       
     }
-
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+    else{
+      const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if(!isPasswordValid) {
       // return res.status(401).json( { message: 'Invalid credentials' } );
-      res.render('error', {
+      res.status(401).render('error', {
         layout: adminLayout,
         message: "Invalid Credentials"
       });
@@ -82,6 +82,8 @@ router.post('/admin', async (req, res) => {
     res.cookie('token', token, { httpOnly: true });
     res.redirect('/dashboard');
 
+    }
+    
   } catch (error) {
     console.log(error);
   }
