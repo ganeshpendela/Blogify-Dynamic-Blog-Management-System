@@ -4,7 +4,7 @@ Welcome to Blogify! This dynamic blog management system allows you to create, ma
 
 
 ## Live Preview
-[Click here](https://blogify-dynamic-blog-management-system.onrender.com) for a live preview of Blogify.
+[Click here](https://blogify-dynamic-blog-management-system.onrender.com) for a live preview of Blogify, **it takes a minute to load(since deployed in a free server)** .
 
 
 ## Features

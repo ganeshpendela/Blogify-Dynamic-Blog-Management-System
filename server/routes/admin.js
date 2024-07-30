@@ -60,14 +60,22 @@ router.post('/admin', async (req, res) => {
     const user = await User.findOne( { username } );
 
     if(!user) {
-      return res.status(401).json( { message: 'Invalid credentials' } );
+      // return res.status(401).json( { message: 'Invalid credentials' } );
+      res.render('error', {
+        layout: adminLayout,
+        message: "Invalid Credentials"
+      });
       
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if(!isPasswordValid) {
-      return res.status(401).json( { message: 'Invalid credentials' } );
+      // return res.status(401).json( { message: 'Invalid credentials' } );
+      res.render('error', {
+        layout: adminLayout,
+        message: "Invalid Credentials"
+      });
     }
 
     const token = jwt.sign({ userId: user._id}, jwtSecret );
@@ -232,9 +240,9 @@ router.post('/register', async (req, res) => {
       res.status(201).json({ message: 'User Created', user });
     } catch (error) {
       if(error.code === 11000) {
-        res.status(409).json({ message: 'User already in use'});
+        res.status(409).render('error', { layout: adminLayout, message: 'User already in use'});
       }
-      res.status(500).json({ message: 'Internal server error'})
+      res.status(500).json('error', { layout: adminLayout,message: 'Internal server error'})
     }
 
   } catch (error) {
